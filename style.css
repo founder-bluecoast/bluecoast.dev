@@ -45,8 +45,8 @@ body {
   /* Primary electric blue color for all text */
   color: #00bfff;
   
-  /* Monospace font stack for authentic terminal appearance */
-  font-family: "Courier New", "Monaco", "Consolas", monospace;
+  /* IBM Plex Mono font stack for authentic terminal appearance */
+  font-family: "IBM Plex Mono", "Courier New", "Monaco", "Consolas", monospace;
   font-size: 14px;
   line-height: 1.4;
   
@@ -197,22 +197,46 @@ body {
    CONTENT TEXT STYLING
    ========================================================================== */
 
-/* Main content text container with centered layout */
+/* Main content text container with terminal-style layout */
 .content-text {
   margin: 30px 0;
   text-align: left;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  font-family: "IBM Plex Mono", "Courier New", "Monaco", "Consolas", monospace;
+  letter-spacing: 0.5px;                 /* Slightly increased character spacing for terminal feel */
+  line-height: 1.6;                      /* Tighter line height for terminal appearance */
 }
 
-/* Individual content lines with terminal-style formatting */
+/* Individual content lines with authentic terminal formatting */
 .line {
-  margin: 8px 0;
+  margin: 6px 0;                         /* Tighter spacing between lines */
   color: #00bfff;
   text-shadow: 0 0 3px #00bfff;         /* Subtle electric blue glow for readability */
   font-size: 14px;
+  font-family: "IBM Plex Mono", "Courier New", "Monaco", "Consolas", monospace;
+  font-weight: 400;                      /* Medium weight for authentic terminal text */
+  letter-spacing: 0.3px;                 /* Slight character spacing for terminal feel */
+  white-space: pre-wrap;                 /* Preserve whitespace and line breaks */
+  text-rendering: optimizeSpeed;         /* Optimize for terminal-style rendering */
+  -webkit-font-smoothing: none;          /* Disable font smoothing for pixelated look */
+  -moz-osx-font-smoothing: auto;         /* Allow OS font smoothing on macOS */
+  opacity: 0;                            /* Start invisible for typewriter effect */
+  animation: typewriter 0.5s ease-in-out forwards; /* Typewriter animation */
 }
+
+/* Typewriter animation delays for each line */
+.line:nth-child(1) { animation-delay: 0.5s; }
+.line:nth-child(2) { animation-delay: 1.0s; }
+.line:nth-child(3) { animation-delay: 1.5s; }
+.line:nth-child(4) { animation-delay: 2.0s; }
+.line:nth-child(5) { animation-delay: 2.5s; }
+.line:nth-child(6) { animation-delay: 3.0s; }
+.line:nth-child(7) { animation-delay: 3.5s; }
+.line:nth-child(8) { animation-delay: 4.0s; }
+.line:nth-child(9) { animation-delay: 4.5s; }
+.line:nth-child(10) { animation-delay: 5.0s; }
 
 /* ==========================================================================
    INTERACTIVE ELEMENTS
@@ -231,6 +255,35 @@ a:hover {
   color: #ffffff;                        /* White on hover */
   text-shadow: 0 0 10px #87ceeb;        /* Enhanced sky blue glow on hover */
   text-decoration: underline;
+}
+
+/* ==========================================================================
+   TERMINAL ENHANCEMENTS
+   ========================================================================== */
+
+/* CRT scanline effect for authentic retro monitor appearance */
+.terminal::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 191, 255, 0.03) 2px,
+    rgba(0, 191, 255, 0.03) 4px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Terminal content should appear above scanlines */
+.terminal-body {
+  position: relative;
+  z-index: 2;
 }
 
 /* ==========================================================================
@@ -256,6 +309,18 @@ a:hover {
   0% { text-shadow: 0 0 5px #00bfff; }
   50% { text-shadow: 0 0 20px #00bfff, 0 0 30px #00bfff; }
   100% { text-shadow: 0 0 5px #00bfff; }
+}
+
+/* Typewriter animation for terminal text */
+@keyframes typewriter {
+  0% { 
+    opacity: 0; 
+    transform: translateY(10px);
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0);
+  }
 }
 
 /* ==========================================================================

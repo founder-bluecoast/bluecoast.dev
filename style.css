@@ -4,20 +4,20 @@
   
   A comprehensive CSS file that creates a retro terminal aesthetic for the
   Blue Coast Software landing page. This stylesheet implements a nostalgic
-  1980s computer terminal design with neon green colors, glowing effects,
+  1980s computer terminal design with electric blue colors, glowing effects,
   and authentic terminal window styling.
   
   Key Features:
   - Retro terminal window design with macOS-style controls
-  - Neon green color scheme (#00ff41) with glowing text effects
+  - Electric blue color scheme (#00bfff) with glowing text effects
   - ASCII art styling with pulsing animations
   - Responsive design for mobile and desktop
   - Terminal-style typography and layout
   - Subtle CRT monitor flicker effects
   
   Color Palette:
-  - Primary: #00ff41 (Neon Green)
-  - Secondary: #ffff00 (Bright Yellow for links)
+  - Primary: #00bfff (Electric Blue)
+  - Secondary: #87ceeb (Sky Blue for links)
   - Background: #000000 (Deep Black)
   - Accents: Terminal button colors (red, yellow, green)
   
@@ -42,8 +42,8 @@ body {
   /* Dark radial gradient background for depth and atmosphere */
   background: radial-gradient(ellipse at center, #0a0a0a 0%, #000000 100%);
   
-  /* Primary neon green color for all text */
-  color: #00ff41;
+  /* Primary electric blue color for all text */
+  color: #00bfff;
   
   /* Monospace font stack for authentic terminal appearance */
   font-family: "Courier New", "Monaco", "Consolas", monospace;
@@ -70,14 +70,14 @@ body {
   max-width: 900px;
   background: #000000;
   
-  /* Neon green border with glowing effect */
-  border: 2px solid #00ff41;
+  /* Electric blue border with glowing effect */
+  border: 2px solid #00bfff;
   border-radius: 8px;
   
   /* Dual box-shadow for outer glow and inner highlight */
   box-shadow: 
-    0 0 20px #00ff41,                                    /* Outer neon glow */
-    inset 0 0 20px rgba(0, 255, 65, 0.1);              /* Inner subtle highlight */
+    0 0 20px #00bfff,                                    /* Outer electric blue glow */
+    inset 0 0 20px rgba(0, 191, 255, 0.1);              /* Inner subtle highlight */
   
   overflow: hidden;
   position: relative;
@@ -87,7 +87,7 @@ body {
 .terminal-header {
   /* Subtle gradient background for header depth */
   background: linear-gradient(90deg, #1a1a1a 0%, #2a2a2a 100%);
-  border-bottom: 1px solid #00ff41;
+  border-bottom: 1px solid #00bfff;
   padding: 8px 16px;
   display: flex;
   justify-content: space-between;
@@ -115,10 +115,10 @@ body {
 
 /* Terminal title styling (currently unused but available for future use) */
 .terminal-title {
-  color: #00ff41;
+  color: #00bfff;
   font-size: 12px;
   font-weight: bold;
-  text-shadow: 0 0 5px #00ff41;
+  text-shadow: 0 0 5px #00bfff;
 }
 
 /* ==========================================================================
@@ -154,9 +154,9 @@ body {
 
 /* Terminal prompt symbol ($) styling */
 .prompt {
-  color: #00ff41;
+  color: #00bfff;
   font-weight: bold;
-  text-shadow: 0 0 5px #00ff41;
+  text-shadow: 0 0 5px #00bfff;
 }
 
 /* Command text styling (for future terminal commands) */
@@ -167,7 +167,7 @@ body {
 
 /* Blinking cursor character for interactive terminal feel */
 .cursor {
-  color: #00ff41;
+  color: #00bfff;
   animation: blink 1s infinite;
   font-weight: bold;
 }
@@ -184,10 +184,10 @@ body {
 
 /* ASCII art text styling with enhanced glow effect */
 .ascii-art pre {
-  color: #00ff41;
+  color: #00bfff;
   font-size: 10px;
   line-height: 1.2;
-  text-shadow: 0 0 10px #00ff41;        /* Enhanced glow for ASCII art */
+  text-shadow: 0 0 10px #00bfff;        /* Enhanced electric blue glow for ASCII art */
   margin: 0;
   white-space: pre;                      /* Preserves ASCII art formatting */
   overflow-x: auto;                      /* Horizontal scroll for small screens */
@@ -209,8 +209,8 @@ body {
 /* Individual content lines with terminal-style formatting */
 .line {
   margin: 8px 0;
-  color: #00ff41;
-  text-shadow: 0 0 3px #00ff41;         /* Subtle glow for readability */
+  color: #00bfff;
+  text-shadow: 0 0 3px #00bfff;         /* Subtle electric blue glow for readability */
   font-size: 14px;
 }
 
@@ -218,18 +218,18 @@ body {
    INTERACTIVE ELEMENTS
    ========================================================================== */
 
-/* Link styling with neon yellow color and hover effects */
+/* Link styling with sky blue color and hover effects */
 a {
-  color: #ffff00;                        /* Bright yellow for links */
+  color: #87ceeb;                        /* Sky blue for links */
   text-decoration: none;
-  text-shadow: 0 0 5px #ffff00;         /* Yellow glow effect */
+  text-shadow: 0 0 5px #87ceeb;         /* Sky blue glow effect */
   transition: all 0.3s ease;            /* Smooth transition animations */
 }
 
 /* Link hover state with enhanced glow and underline */
 a:hover {
   color: #ffffff;                        /* White on hover */
-  text-shadow: 0 0 10px #ffff00;        /* Enhanced glow on hover */
+  text-shadow: 0 0 10px #87ceeb;        /* Enhanced sky blue glow on hover */
   text-decoration: underline;
 }
 
@@ -253,9 +253,9 @@ a:hover {
 
 /* Pulsing glow animation for ASCII art */
 @keyframes glow {
-  0% { text-shadow: 0 0 5px #00ff41; }
-  50% { text-shadow: 0 0 20px #00ff41, 0 0 30px #00ff41; }
-  100% { text-shadow: 0 0 5px #00ff41; }
+  0% { text-shadow: 0 0 5px #00bfff; }
+  50% { text-shadow: 0 0 20px #00bfff, 0 0 30px #00bfff; }
+  100% { text-shadow: 0 0 5px #00bfff; }
 }
 
 /* ==========================================================================

@@ -7,29 +7,56 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="crt">
-    <header>
-      <h1>Blue Coast Software</h1>
-      <p class="tagline">Independent Guild of Tools & Games • Est. 2025</p>
-    </header>
-
-    <main>
-      <p>
-        Born from the spirit of the California coast and the craft of 1980s programming,  
-        Blue Coast Software is a small workshop dedicated to lean, lasting, and carefully  
-        designed software.
-      </p>
-
-      <p>
-        This is our guild hall — where code, design, and story meet.  
-        More projects will be revealed as the tide rolls on. Testing out changes.
-      </p>
-    </main>
-
-    <footer>
-      <p>Contact: <a href="mailto:founder@bluecoast.dev">founder@bluecoast.dev</a></p>
-      <p>&copy; 2025 Blue Coast Software</p>
-    </footer>
+  <div class="terminal">
+    <div class="terminal-header">
+      <div class="terminal-buttons">
+        <span class="btn close"></span>
+        <span class="btn minimize"></span>
+        <span class="btn maximize"></span>
+      </div>
+      <div class="terminal-title">bluecoast@terminal:~$</div>
+    </div>
+    
+    <div class="terminal-body">
+      <div class="terminal-content">
+        <div class="prompt-line">
+          <span class="prompt">$</span>
+          <span class="command">cat bluecoast.txt</span>
+        </div>
+        
+        <div class="output">
+          <div class="ascii-art">
+            <pre>
+    ██████╗ ██╗     ██╗   ██╗███████╗     ██████╗ ██████╗  █████╗ ███████╗████████╗
+    ██╔══██╗██║     ██║   ██║██╔════╝    ██╔════╝██╔═══██╗██╔══██╗██╔════╝╚══██╔══╝
+    ██████╔╝██║     ██║   ██║█████╗      ██║     ██║   ██║███████║███████╗   ██║   
+    ██╔══██╗██║     ╚██╗ ██╔╝██╔══╝      ██║     ██║   ██║██╔══██║╚════██║   ██║   
+    ██████╔╝███████╗ ╚████╔╝ ███████╗    ╚██████╗╚██████╔╝██║  ██║███████║   ██║   
+    ╚═════╝ ╚══════╝  ╚═══╝  ╚══════╝     ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝   ╚═╝   
+            </pre>
+          </div>
+          
+          <div class="content-text">
+            <p class="line">> Independent Guild of Tools & Games • Est. 2025</p>
+            <br>
+            <p class="line">> Born from the spirit of the California coast and the craft of 1980s programming,</p>
+            <p class="line">> Blue Coast Software is a small workshop dedicated to lean, lasting, and carefully</p>
+            <p class="line">> designed software.</p>
+            <br>
+            <p class="line">> This is our guild hall — where code, design, and story meet.</p>
+            <p class="line">> More projects will be revealed as the tide rolls on.</p>
+            <br>
+            <p class="line">> Contact: <a href="mailto:founder@bluecoast.dev">founder@bluecoast.dev</a></p>
+            <p class="line">> © 2025 Blue Coast Software</p>
+          </div>
+          
+          <div class="prompt-line">
+            <span class="prompt">$</span>
+            <span class="cursor">█</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </body>
 </html>

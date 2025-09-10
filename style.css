@@ -1,16 +1,56 @@
-/* Global Styles */
+/*
+  Blue Coast Software - Terminal Theme Stylesheet
+  ===============================================
+  
+  A comprehensive CSS file that creates a retro terminal aesthetic for the
+  Blue Coast Software landing page. This stylesheet implements a nostalgic
+  1980s computer terminal design with neon green colors, glowing effects,
+  and authentic terminal window styling.
+  
+  Key Features:
+  - Retro terminal window design with macOS-style controls
+  - Neon green color scheme (#00ff41) with glowing text effects
+  - ASCII art styling with pulsing animations
+  - Responsive design for mobile and desktop
+  - Terminal-style typography and layout
+  - Subtle CRT monitor flicker effects
+  
+  Color Palette:
+  - Primary: #00ff41 (Neon Green)
+  - Secondary: #ffff00 (Bright Yellow for links)
+  - Background: #000000 (Deep Black)
+  - Accents: Terminal button colors (red, yellow, green)
+  
+  Author: Blue Coast Software
+  Version: 1.0
+  Last Updated: 2025
+*/
+
+/* ==========================================================================
+   GLOBAL STYLES & RESET
+   ========================================================================== */
+
+/* CSS Reset - removes default browser styling for consistent appearance */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Main body styling with terminal theme and perfect centering */
 body {
+  /* Dark radial gradient background for depth and atmosphere */
   background: radial-gradient(ellipse at center, #0a0a0a 0%, #000000 100%);
+  
+  /* Primary neon green color for all text */
   color: #00ff41;
+  
+  /* Monospace font stack for authentic terminal appearance */
   font-family: "Courier New", "Monaco", "Consolas", monospace;
   font-size: 14px;
   line-height: 1.4;
+  
+  /* Layout properties for perfect centering */
   margin: 0;
   padding: 20px;
   min-height: 100vh;
@@ -20,22 +60,32 @@ body {
   overflow-x: hidden;
 }
 
-/* Terminal Container */
+/* ==========================================================================
+   TERMINAL WINDOW COMPONENTS
+   ========================================================================== */
+
+/* Main terminal container - simulates a retro computer terminal window */
 .terminal {
   width: 100%;
   max-width: 900px;
   background: #000000;
+  
+  /* Neon green border with glowing effect */
   border: 2px solid #00ff41;
   border-radius: 8px;
+  
+  /* Dual box-shadow for outer glow and inner highlight */
   box-shadow: 
-    0 0 20px #00ff41,
-    inset 0 0 20px rgba(0, 255, 65, 0.1);
+    0 0 20px #00ff41,                                    /* Outer neon glow */
+    inset 0 0 20px rgba(0, 255, 65, 0.1);              /* Inner subtle highlight */
+  
   overflow: hidden;
   position: relative;
 }
 
-/* Terminal Header */
+/* Terminal header bar with window controls (macOS style) */
 .terminal-header {
+  /* Subtle gradient background for header depth */
   background: linear-gradient(90deg, #1a1a1a 0%, #2a2a2a 100%);
   border-bottom: 1px solid #00ff41;
   padding: 8px 16px;
@@ -44,11 +94,13 @@ body {
   align-items: center;
 }
 
+/* Container for window control buttons */
 .terminal-buttons {
   display: flex;
   gap: 8px;
 }
 
+/* Base styling for all window control buttons */
 .btn {
   width: 12px;
   height: 12px;
@@ -56,10 +108,12 @@ body {
   display: inline-block;
 }
 
-.btn.close { background: #ff5f56; }
-.btn.minimize { background: #ffbd2e; }
-.btn.maximize { background: #27ca3f; }
+/* Individual button colors matching macOS terminal */
+.btn.close { background: #ff5f56; }      /* Red close button */
+.btn.minimize { background: #ffbd2e; }   /* Yellow minimize button */
+.btn.maximize { background: #27ca3f; }   /* Green maximize button */
 
+/* Terminal title styling (currently unused but available for future use) */
 .terminal-title {
   color: #00ff41;
   font-size: 12px;
@@ -67,7 +121,11 @@ body {
   text-shadow: 0 0 5px #00ff41;
 }
 
-/* Terminal Body */
+/* ==========================================================================
+   TERMINAL CONTENT AREA
+   ========================================================================== */
+
+/* Main terminal body containing all content */
 .terminal-body {
   padding: 20px;
   min-height: 500px;
@@ -75,12 +133,17 @@ body {
   position: relative;
 }
 
+/* Content wrapper for proper centering and layout */
 .terminal-content {
   text-align: center;
   max-width: 100%;
 }
 
-/* Prompt Lines */
+/* ==========================================================================
+   TERMINAL PROMPT ELEMENTS
+   ========================================================================== */
+
+/* Container for terminal prompt lines */
 .prompt-line {
   margin-bottom: 10px;
   display: flex;
@@ -89,40 +152,52 @@ body {
   gap: 8px;
 }
 
+/* Terminal prompt symbol ($) styling */
 .prompt {
   color: #00ff41;
   font-weight: bold;
   text-shadow: 0 0 5px #00ff41;
 }
 
+/* Command text styling (for future terminal commands) */
 .command {
   color: #ffffff;
   font-weight: normal;
 }
 
+/* Blinking cursor character for interactive terminal feel */
 .cursor {
   color: #00ff41;
   animation: blink 1s infinite;
   font-weight: bold;
 }
 
-/* ASCII Art */
+/* ==========================================================================
+   ASCII ART & VISUAL ELEMENTS
+   ========================================================================== */
+
+/* Container for ASCII art company logo */
 .ascii-art {
   margin: 20px 0;
   text-align: center;
 }
 
+/* ASCII art text styling with enhanced glow effect */
 .ascii-art pre {
   color: #00ff41;
   font-size: 10px;
   line-height: 1.2;
-  text-shadow: 0 0 10px #00ff41;
+  text-shadow: 0 0 10px #00ff41;        /* Enhanced glow for ASCII art */
   margin: 0;
-  white-space: pre;
-  overflow-x: auto;
+  white-space: pre;                      /* Preserves ASCII art formatting */
+  overflow-x: auto;                      /* Horizontal scroll for small screens */
 }
 
-/* Content Text */
+/* ==========================================================================
+   CONTENT TEXT STYLING
+   ========================================================================== */
+
+/* Main content text container with centered layout */
 .content-text {
   margin: 30px 0;
   text-align: left;
@@ -131,33 +206,44 @@ body {
   margin-right: auto;
 }
 
+/* Individual content lines with terminal-style formatting */
 .line {
   margin: 8px 0;
   color: #00ff41;
-  text-shadow: 0 0 3px #00ff41;
+  text-shadow: 0 0 3px #00ff41;         /* Subtle glow for readability */
   font-size: 14px;
 }
 
-/* Links */
+/* ==========================================================================
+   INTERACTIVE ELEMENTS
+   ========================================================================== */
+
+/* Link styling with neon yellow color and hover effects */
 a {
-  color: #ffff00;
+  color: #ffff00;                        /* Bright yellow for links */
   text-decoration: none;
-  text-shadow: 0 0 5px #ffff00;
-  transition: all 0.3s ease;
+  text-shadow: 0 0 5px #ffff00;         /* Yellow glow effect */
+  transition: all 0.3s ease;            /* Smooth transition animations */
 }
 
+/* Link hover state with enhanced glow and underline */
 a:hover {
-  color: #ffffff;
-  text-shadow: 0 0 10px #ffff00;
+  color: #ffffff;                        /* White on hover */
+  text-shadow: 0 0 10px #ffff00;        /* Enhanced glow on hover */
   text-decoration: underline;
 }
 
-/* Animations */
+/* ==========================================================================
+   ANIMATIONS & EFFECTS
+   ========================================================================== */
+
+/* Blinking cursor animation for terminal authenticity */
 @keyframes blink {
   0%, 50% { opacity: 1; }
   51%, 100% { opacity: 0; }
 }
 
+/* Subtle CRT monitor flicker effect for retro authenticity */
 @keyframes flicker {
   0% { opacity: 1; }
   98% { opacity: 1; }
@@ -165,49 +251,67 @@ a:hover {
   100% { opacity: 1; }
 }
 
+/* Pulsing glow animation for ASCII art */
 @keyframes glow {
   0% { text-shadow: 0 0 5px #00ff41; }
   50% { text-shadow: 0 0 20px #00ff41, 0 0 30px #00ff41; }
   100% { text-shadow: 0 0 5px #00ff41; }
 }
 
-/* Apply animations */
+/* ==========================================================================
+   ANIMATION APPLICATIONS
+   ========================================================================== */
+
+/* Apply subtle flicker to entire terminal for CRT monitor effect */
 .terminal {
   animation: flicker 0.15s infinite linear;
 }
 
+/* Apply pulsing glow to ASCII art for enhanced visual impact */
 .ascii-art pre {
   animation: glow 2s ease-in-out infinite alternate;
 }
 
-/* Responsive Design */
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+
+/* Tablet and small desktop breakpoint */
 @media (max-width: 768px) {
+  /* Reduce padding for better mobile spacing */
   body {
     padding: 10px;
   }
   
+  /* Full width terminal on smaller screens */
   .terminal {
     max-width: 100%;
   }
   
+  /* Smaller ASCII art for mobile readability */
   .ascii-art pre {
     font-size: 8px;
   }
   
+  /* Smaller content text for mobile */
   .content-text {
     font-size: 12px;
   }
   
+  /* Reduced terminal body padding */
   .terminal-body {
     padding: 15px;
   }
 }
 
+/* Mobile phone breakpoint */
 @media (max-width: 480px) {
+  /* Even smaller ASCII art for very small screens */
   .ascii-art pre {
     font-size: 6px;
   }
   
+  /* Compact content text for mobile phones */
   .content-text {
     font-size: 11px;
   }

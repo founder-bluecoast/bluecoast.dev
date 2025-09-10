@@ -1,27 +1,62 @@
 <!DOCTYPE html>
+<!--
+  Blue Coast Software - Landing Page
+  ===================================
+  
+  A retro terminal-themed landing page for Blue Coast Software, an independent
+  software development guild. This page features a nostalgic 1980s terminal
+  aesthetic with neon green colors, ASCII art, and terminal-style interface
+  elements.
+  
+  Features:
+  - Responsive terminal window design
+  - ASCII art company logo
+  - Terminal-style content presentation
+  - Neon color scheme with glowing effects
+  - Mobile-responsive layout
+  
+  Author: Blue Coast Software
+  Version: 1.0
+  Last Updated: 2025
+-->
 <html lang="en">
 <head>
+  <!-- Meta tags for proper document structure and mobile responsiveness -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Page title for browser tab and SEO -->
   <title>Blue Coast Software</title>
+  
+  <!-- External stylesheet for terminal-themed styling -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Main terminal container - simulates a retro computer terminal window -->
   <div class="terminal">
+    
+    <!-- Terminal header bar with window controls (macOS style) -->
     <div class="terminal-header">
       <div class="terminal-buttons">
-        <span class="btn close"></span>
-        <span class="btn minimize"></span>
-        <span class="btn maximize"></span>
+        <!-- Window control buttons for visual authenticity -->
+        <span class="btn close"></span>      <!-- Red close button -->
+        <span class="btn minimize"></span>   <!-- Yellow minimize button -->
+        <span class="btn maximize"></span>   <!-- Green maximize button -->
       </div>
     </div>
     
+    <!-- Main terminal content area -->
     <div class="terminal-body">
       <div class="terminal-content">
+        
+        <!-- Empty prompt line for spacing (can be used for future terminal commands) -->
         <div class="prompt-line">
         </div>
         
+        <!-- Terminal output section containing all displayed content -->
         <div class="output">
+          
+          <!-- ASCII art company logo in terminal style -->
           <div class="ascii-art">
             <pre>
     ██████╗ ██╗     ██╗   ██╗███████╗     ██████╗ ██████╗  █████╗ ███████╗████████╗
@@ -33,23 +68,32 @@
             </pre>
           </div>
           
+          <!-- Main content text with terminal-style formatting -->
           <div class="content-text">
+            <!-- Company tagline and establishment year -->
             <p class="line">> Independent Guild of Tools & Games • Est. 2025</p>
             <br>
+            
+            <!-- Company description and mission statement -->
             <p class="line">> Born from the spirit of the California coast and the craft of 1980s programming,</p>
             <p class="line">> Blue Coast Software is a small workshop dedicated to lean, lasting, and carefully</p>
             <p class="line">> designed software.</p>
             <br>
+            
+            <!-- Additional company information -->
             <p class="line">> This is our guild hall — where code, design, and story meet.</p>
             <p class="line">> More projects will be revealed as the tide rolls on.</p>
             <br>
+            
+            <!-- Contact information and copyright -->
             <p class="line">> Contact: <a href="mailto:founder@bluecoast.dev">founder@bluecoast.dev</a></p>
             <p class="line">> © 2025 Blue Coast Software</p>
           </div>
           
+          <!-- Terminal prompt with blinking cursor for interactive feel -->
           <div class="prompt-line">
-            <span class="prompt">$</span>
-            <span class="cursor">█</span>
+            <span class="prompt">$</span>        <!-- Terminal prompt symbol -->
+            <span class="cursor">█</span>       <!-- Blinking cursor character -->
           </div>
         </div>
       </div>

@@ -286,7 +286,7 @@ body {
   font-weight: 400;
   white-space: pre-wrap;                 /* Preserve whitespace and line breaks */
   opacity: 0;                            /* Start invisible for typewriter effect */
-  animation: typewriter var(--transition) ease-out forwards; /* Brand motion timing */
+  animation: typewriter 0.5s ease-out forwards; /* Brand motion timing */
 }
 
 /* Heading styling */

@@ -259,7 +259,9 @@ body {
   font-family: var(--font-mono);
   margin: 0;
   white-space: pre;                      /* Preserves ASCII art formatting */
-  overflow-x: auto;                      /* Horizontal scroll for small screens */
+  overflow-x: hidden;                    /* Prevent horizontal scroll */
+  word-wrap: break-word;                 /* Allow text to wrap if needed */
+  max-width: 100%;                       /* Ensure it doesn't exceed container */
 }
 
 /* ==========================================================================
@@ -412,7 +414,7 @@ a:hover {
   
   /* Smaller ASCII art for mobile readability */
   .ascii-art pre {
-    font-size: 10px;
+    font-size: 8px;
   }
   
   /* Smaller content text for mobile */
@@ -430,7 +432,7 @@ a:hover {
 @media (max-width: 480px) {
   /* Even smaller ASCII art for very small screens */
   .ascii-art pre {
-    font-size: 8px;
+    font-size: 6px;
   }
   
   /* Compact content text for mobile phones */
@@ -441,5 +443,18 @@ a:hover {
   /* Minimal padding for mobile */
   .terminal-body {
     padding: 20px;
+  }
+}
+
+/* Extra small mobile devices (iPhone SE, etc.) */
+@media (max-width: 375px) {
+  /* Tiny ASCII art for very small screens */
+  .ascii-art pre {
+    font-size: 5px;
+  }
+  
+  /* Minimal padding for tiny screens */
+  .terminal-body {
+    padding: 16px;
   }
 }

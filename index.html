@@ -3,20 +3,20 @@
   Blue Coast Software - Landing Page
   ===================================
   
-  A retro terminal-themed landing page for Blue Coast Software, an independent
-  software development guild. This page features a nostalgic 1980s terminal
-  aesthetic with neon green colors, ASCII art, and terminal-style interface
-  elements.
+  A modern landing page for Blue Coast Software, an independent software
+  development guild. This page features a clean, accessible design with
+  Blue Coast brand colors, typography, and subtle terminal-inspired elements.
   
   Features:
-  - Responsive terminal window design
-  - ASCII art company logo
-  - Terminal-style content presentation
-  - Neon color scheme with glowing effects
-  - Mobile-responsive layout
+  - Dark-first theme with navy base and cream text
+  - IBM Plex typography family (Sans, Mono, Serif)
+  - Blue Coast brand color palette
+  - Accessible design with AA contrast compliance
+  - Responsive mobile-first layout
+  - Subtle animations with brand motion guidelines
   
   Author: Blue Coast Software
-  Version: 1.0
+  Version: 2.0
   Last Updated: 2025
 -->
 <html lang="en">
@@ -28,16 +28,19 @@
   <!-- Page title for browser tab and SEO -->
   <title>Blue Coast Software</title>
   
-  <!-- Google Fonts - IBM Plex Mono for authentic terminal typography -->
+  <!-- Google Fonts - IBM Plex family for Blue Coast brand typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
   
-  <!-- External stylesheet for terminal-themed styling -->
+  <!-- External stylesheet for Blue Coast brand styling -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Main terminal container - simulates a retro computer terminal window -->
+  <!-- Skip link for accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <!-- Main content container - modern card design with Blue Coast branding -->
   <div class="terminal">
     
     <!-- Terminal header bar with window controls (macOS style) -->
@@ -51,7 +54,7 @@
     </div>
     
     <!-- Main terminal content area -->
-    <div class="terminal-body">
+    <div class="terminal-body" id="main-content">
       <div class="terminal-content">
         
         <!-- Empty prompt line for spacing (can be used for future terminal commands) -->
@@ -59,24 +62,24 @@
         </div>
         
         <!-- Terminal output section containing all displayed content -->
-        <div class="output">
+        <main class="output">
           
-          <!-- ASCII art company logo in terminal style -->
-          <div class="ascii-art">
-            <pre>
+        <!-- ASCII art company logo -->
+        <div class="ascii-art" role="img" aria-label="Blue Coast Software ASCII art logo">
+          <pre>
     ██████╗ ██╗     ██╗   ██╗ ███████╗     ██████╗ ██████╗  █████╗ ███████╗████████╗
     ██╔══██╗██║     ██║   ██║ ██╔════╝    ██╔════╝██╔═══██╗██╔══██╗██╔════╝╚══██╔══╝
     ██████╔╝██║     ██║   ██║ █████╗      ██║     ██║   ██║███████║███████╗   ██║   
     ██╔══██╗██║     ███╗ ███╝ ██╔══╝      ██║     ██║   ██║██╔══██║╚════██║   ██║   
     ██████╔╝███████╗████████╗ ███████╗    ╚██████╗╚██████╔╝██║  ██║███████║   ██║   
     ╚═════╝ ╚══════╝╚═══════╝ ╚══════╝    ╚══════╝ ╚═════╝ ╚═╝ ╚═╝╚═══════╝   ╚═╝   
-            </pre>
-          </div>
+          </pre>
+        </div>
           
           <!-- Main content text with terminal-style formatting -->
           <div class="content-text">
             <!-- Company tagline and establishment year -->
-            <p class="line">> Independent Guild of Tools & Games • Est. 2025</p>
+            <h1 class="line">> Independent Guild of Tools & Games • Est. 2025</h1>
             <br>
             
             <!-- Company description and mission statement -->
@@ -99,7 +102,7 @@
             <span class="prompt">$</span>        <!-- Terminal prompt symbol -->
             <span class="cursor">█</span>       <!-- Blinking cursor character -->
           </div>
-        </div>
+        </main>
       </div>
     </div>
   </div>

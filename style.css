@@ -1,30 +1,93 @@
 /*
-  Blue Coast Software - Terminal Theme Stylesheet
-  ===============================================
+  Blue Coast Software - Brand Design System
+  =========================================
   
-  A comprehensive CSS file that creates a retro terminal aesthetic for the
-  Blue Coast Software landing page. This stylesheet implements a nostalgic
-  1980s computer terminal design with electric blue colors, glowing effects,
-  and authentic terminal window styling.
+  A comprehensive CSS file implementing the Blue Coast Software brand design system.
+  Features a dark-first theme with navy base, gold accents, and coral CTAs.
   
-  Key Features:
-  - Retro terminal window design with macOS-style controls
-  - Electric blue color scheme (#00bfff) with glowing text effects
-  - ASCII art styling with pulsing animations
-  - Responsive design for mobile and desktop
-  - Terminal-style typography and layout
-  - Subtle CRT monitor flicker effects
-  
-  Color Palette:
-  - Primary: #00bfff (Electric Blue)
-  - Secondary: #87ceeb (Sky Blue for links)
-  - Background: #000000 (Deep Black)
-  - Accents: Terminal button colors (red, yellow, green)
+  Brand Tokens:
+  - Colors: Navy (#0D1C2E), Gold (#E1C27D), Coral (#D84C3F), Teal (#15424A), Cream (#F6F1E8), Green (#325E5A)
+  - Typography: IBM Plex Sans (UI/body), IBM Plex Mono (code/terminal), IBM Plex Serif (display)
+  - Motion: 120-180ms ease-out transitions
+  - Accessibility: AA contrast compliance
   
   Author: Blue Coast Software
-  Version: 1.0
+  Version: 2.0
   Last Updated: 2025
 */
+
+/* ==========================================================================
+   BLUE COAST BRAND TOKENS
+   ========================================================================== */
+
+:root {
+  /* Brand Colors */
+  --bc-navy: #0D1C2E;      /* Base backgrounds */
+  --bc-gold: #E1C27D;      /* Accents, headings */
+  --bc-coral: #D84C3F;     /* CTAs, errors, primary buttons */
+  --bc-teal: #15424A;      /* Secondary surfaces */
+  --bc-cream: #F6F1E8;     /* Text on dark, light backgrounds */
+  --bc-green: #325E5A;     /* Dividers, muted UI */
+  
+  /* Typography */
+  --font-ui: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "IBM Plex Mono", "Courier New", "Monaco", "Consolas", monospace;
+  --font-serif: "IBM Plex Serif", Georgia, "Times New Roman", serif;
+  
+  /* Spacing & Layout */
+  --radius: 12px;          /* Cards/buttons */
+  --radius-sm: 8px;        /* Small elements */
+  --radius-lg: 20px;       /* Large containers */
+  
+  /* Shadows */
+  --shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  
+  /* Motion */
+  --transition: 150ms ease-out;
+  
+  /* Theme Colors (Dark First) */
+  --bg-primary: var(--bc-navy);
+  --bg-secondary: var(--bc-teal);
+  --text-primary: var(--bc-cream);
+  --text-secondary: var(--bc-gold);
+  --accent-primary: var(--bc-coral);
+  --accent-secondary: var(--bc-gold);
+  --border-color: var(--bc-green);
+}
+
+/* Light Theme Override */
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-primary: var(--bc-cream);
+    --bg-secondary: #ffffff;
+    --text-primary: var(--bc-navy);
+    --text-secondary: var(--bc-teal);
+    --border-color: var(--bc-green);
+  }
+}
+
+/* Focus styles for accessibility */
+*:focus {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+/* Skip link for screen readers */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--accent-primary);
+  color: var(--bc-cream);
+  padding: 8px;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
 
 /* ==========================================================================
    GLOBAL STYLES & RESET
@@ -37,18 +100,18 @@
   box-sizing: border-box;
 }
 
-/* Main body styling with terminal theme and perfect centering */
+/* Main body styling with Blue Coast brand theme */
 body {
-  /* Dark radial gradient background for depth and atmosphere */
-  background: radial-gradient(ellipse at center, #0a0a0a 0%, #000000 100%);
+  /* Navy gradient background for depth and atmosphere */
+  background: radial-gradient(ellipse at center, var(--bc-navy) 0%, #000000 100%);
   
-  /* Primary electric blue color for all text */
-  color: #00bfff;
+  /* Cream text color for readability */
+  color: var(--text-primary);
   
-  /* IBM Plex Mono font stack for authentic terminal appearance */
-  font-family: "IBM Plex Mono", "Courier New", "Monaco", "Consolas", monospace;
-  font-size: 14px;
-  line-height: 1.4;
+  /* IBM Plex Sans for modern UI typography */
+  font-family: var(--font-ui);
+  font-size: 16px;
+  line-height: 1.6;
   
   /* Layout properties for perfect centering */
   margin: 0;
@@ -64,31 +127,35 @@ body {
    TERMINAL WINDOW COMPONENTS
    ========================================================================== */
 
-/* Main terminal container - simulates a retro computer terminal window */
+/* Main terminal container - modern card design with Blue Coast branding */
 .terminal {
   width: 100%;
   max-width: 900px;
-  background: #000000;
+  background: var(--bg-primary);
   
-  /* Electric blue border with glowing effect */
-  border: 2px solid #00bfff;
-  border-radius: 8px;
+  /* Gold border with subtle glow */
+  border: 2px solid var(--accent-secondary);
+  border-radius: var(--radius-lg);
   
-  /* Dual box-shadow for outer glow and inner highlight */
-  box-shadow: 
-    0 0 20px #00bfff,                                    /* Outer electric blue glow */
-    inset 0 0 20px rgba(0, 191, 255, 0.1);              /* Inner subtle highlight */
+  /* Brand shadow for depth */
+  box-shadow: var(--shadow);
   
   overflow: hidden;
   position: relative;
+  transition: var(--transition);
+}
+
+.terminal:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
 /* Terminal header bar with window controls (macOS style) */
 .terminal-header {
-  /* Subtle gradient background for header depth */
-  background: linear-gradient(90deg, #1a1a1a 0%, #2a2a2a 100%);
-  border-bottom: 1px solid #00bfff;
-  padding: 8px 16px;
+  /* Teal gradient background for header depth */
+  background: linear-gradient(90deg, var(--bc-teal) 0%, var(--bc-green) 100%);
+  border-bottom: 1px solid var(--border-color);
+  padding: 12px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -108,17 +175,17 @@ body {
   display: inline-block;
 }
 
-/* Individual button colors matching macOS terminal */
-.btn.close { background: #ff5f56; }      /* Red close button */
-.btn.minimize { background: #ffbd2e; }   /* Yellow minimize button */
-.btn.maximize { background: #27ca3f; }   /* Green maximize button */
+/* Individual button colors with Blue Coast branding */
+.btn.close { background: var(--bc-coral); }      /* Coral close button */
+.btn.minimize { background: var(--bc-gold); }    /* Gold minimize button */
+.btn.maximize { background: var(--bc-green); }   /* Green maximize button */
 
 /* Terminal title styling (currently unused but available for future use) */
 .terminal-title {
-  color: #00bfff;
-  font-size: 12px;
-  font-weight: bold;
-  text-shadow: 0 0 5px #00bfff;
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--font-ui);
 }
 
 /* ==========================================================================
@@ -127,9 +194,9 @@ body {
 
 /* Main terminal body containing all content */
 .terminal-body {
-  padding: 20px;
+  padding: 32px;
   min-height: 500px;
-  background: #000000;
+  background: var(--bg-primary);
   position: relative;
 }
 
@@ -154,22 +221,24 @@ body {
 
 /* Terminal prompt symbol ($) styling */
 .prompt {
-  color: #00bfff;
+  color: var(--accent-secondary);
   font-weight: bold;
-  text-shadow: 0 0 5px #00bfff;
+  font-family: var(--font-mono);
 }
 
 /* Command text styling (for future terminal commands) */
 .command {
-  color: #ffffff;
+  color: var(--text-primary);
   font-weight: normal;
+  font-family: var(--font-mono);
 }
 
 /* Blinking cursor character for interactive terminal feel */
 .cursor {
-  color: #00bfff;
+  color: var(--accent-secondary);
   animation: blink 1s infinite;
   font-weight: bold;
+  font-family: var(--font-mono);
 }
 
 /* ==========================================================================
@@ -182,12 +251,12 @@ body {
   text-align: center;
 }
 
-/* ASCII art text styling with enhanced glow effect */
+/* ASCII art text styling with brand colors */
 .ascii-art pre {
-  color: #00bfff;
-  font-size: 10px;
+  color: var(--accent-secondary);
+  font-size: 12px;
   line-height: 1.2;
-  text-shadow: 0 0 10px #00bfff;        /* Enhanced electric blue glow for ASCII art */
+  font-family: var(--font-mono);
   margin: 0;
   white-space: pre;                      /* Preserves ASCII art formatting */
   overflow-x: auto;                      /* Horizontal scroll for small screens */
@@ -197,33 +266,35 @@ body {
    CONTENT TEXT STYLING
    ========================================================================== */
 
-/* Main content text container with terminal-style layout */
+/* Main content text container with modern layout */
 .content-text {
-  margin: 30px 0;
+  margin: 40px 0;
   text-align: left;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
-  font-family: "IBM Plex Mono", "Courier New", "Monaco", "Consolas", monospace;
-  letter-spacing: 0.5px;                 /* Slightly increased character spacing for terminal feel */
-  line-height: 1.6;                      /* Tighter line height for terminal appearance */
+  font-family: var(--font-ui);
+  line-height: 1.7;                      /* Improved readability */
 }
 
-/* Individual content lines with authentic terminal formatting */
+/* Individual content lines with modern formatting */
 .line {
-  margin: 6px 0;                         /* Tighter spacing between lines */
-  color: #00bfff;
-  text-shadow: 0 0 3px #00bfff;         /* Subtle electric blue glow for readability */
-  font-size: 14px;
-  font-family: "IBM Plex Mono", "Courier New", "Monaco", "Consolas", monospace;
-  font-weight: 400;                      /* Medium weight for authentic terminal text */
-  letter-spacing: 0.3px;                 /* Slight character spacing for terminal feel */
+  margin: 8px 0;                         /* Improved spacing between lines */
+  color: var(--text-primary);
+  font-size: 16px;
+  font-family: var(--font-ui);
+  font-weight: 400;
   white-space: pre-wrap;                 /* Preserve whitespace and line breaks */
-  text-rendering: optimizeSpeed;         /* Optimize for terminal-style rendering */
-  -webkit-font-smoothing: none;          /* Disable font smoothing for pixelated look */
-  -moz-osx-font-smoothing: auto;         /* Allow OS font smoothing on macOS */
   opacity: 0;                            /* Start invisible for typewriter effect */
-  animation: typewriter 0.5s ease-in-out forwards; /* Typewriter animation */
+  animation: typewriter var(--transition) ease-out forwards; /* Brand motion timing */
+}
+
+/* Heading styling */
+h1.line {
+  color: var(--text-secondary);
+  font-size: 18px;
+  font-weight: 600;
+  margin: 16px 0;
 }
 
 /* Typewriter animation delays for each line */
@@ -242,26 +313,26 @@ body {
    INTERACTIVE ELEMENTS
    ========================================================================== */
 
-/* Link styling with sky blue color and hover effects */
+/* Link styling with coral color and hover effects */
 a {
-  color: #87ceeb;                        /* Sky blue for links */
+  color: var(--accent-primary);          /* Coral for links */
   text-decoration: none;
-  text-shadow: 0 0 5px #87ceeb;         /* Sky blue glow effect */
-  transition: all 0.3s ease;            /* Smooth transition animations */
+  transition: var(--transition);         /* Brand motion timing */
+  font-weight: 500;
 }
 
-/* Link hover state with enhanced glow and underline */
+/* Link hover state with underline */
 a:hover {
-  color: #ffffff;                        /* White on hover */
-  text-shadow: 0 0 10px #87ceeb;        /* Enhanced sky blue glow on hover */
+  color: var(--accent-primary);
   text-decoration: underline;
+  opacity: 0.8;
 }
 
 /* ==========================================================================
    TERMINAL ENHANCEMENTS
    ========================================================================== */
 
-/* CRT scanline effect for authentic retro monitor appearance */
+/* Subtle texture overlay for depth */
 .terminal::before {
   content: '';
   position: absolute;
@@ -273,8 +344,8 @@ a:hover {
     0deg,
     transparent,
     transparent 2px,
-    rgba(0, 191, 255, 0.03) 2px,
-    rgba(0, 191, 255, 0.03) 4px
+    rgba(225, 194, 125, 0.02) 2px,
+    rgba(225, 194, 125, 0.02) 4px
   );
   pointer-events: none;
   z-index: 1;
@@ -296,26 +367,17 @@ a:hover {
   51%, 100% { opacity: 0; }
 }
 
-/* Subtle CRT monitor flicker effect for retro authenticity */
-@keyframes flicker {
-  0% { opacity: 1; }
-  98% { opacity: 1; }
-  99% { opacity: 0.98; }
+/* Subtle fade-in animation for content */
+@keyframes fadeIn {
+  0% { opacity: 0; }
   100% { opacity: 1; }
-}
-
-/* Pulsing glow animation for ASCII art */
-@keyframes glow {
-  0% { text-shadow: 0 0 5px #00bfff; }
-  50% { text-shadow: 0 0 20px #00bfff, 0 0 30px #00bfff; }
-  100% { text-shadow: 0 0 5px #00bfff; }
 }
 
 /* Typewriter animation for terminal text */
 @keyframes typewriter {
   0% { 
     opacity: 0; 
-    transform: translateY(10px);
+    transform: translateY(8px);
   }
   100% { 
     opacity: 1; 
@@ -327,14 +389,9 @@ a:hover {
    ANIMATION APPLICATIONS
    ========================================================================== */
 
-/* Apply subtle flicker to entire terminal for CRT monitor effect */
-.terminal {
-  animation: flicker 0.15s infinite linear;
-}
-
-/* Apply pulsing glow to ASCII art for enhanced visual impact */
+/* Apply subtle fade-in to ASCII art */
 .ascii-art pre {
-  animation: glow 2s ease-in-out infinite alternate;
+  animation: fadeIn 0.8s ease-out forwards;
 }
 
 /* ==========================================================================
@@ -345,7 +402,7 @@ a:hover {
 @media (max-width: 768px) {
   /* Reduce padding for better mobile spacing */
   body {
-    padding: 10px;
+    padding: 16px;
   }
   
   /* Full width terminal on smaller screens */
@@ -355,17 +412,17 @@ a:hover {
   
   /* Smaller ASCII art for mobile readability */
   .ascii-art pre {
-    font-size: 8px;
+    font-size: 10px;
   }
   
   /* Smaller content text for mobile */
-  .content-text {
-    font-size: 12px;
+  .line {
+    font-size: 14px;
   }
   
   /* Reduced terminal body padding */
   .terminal-body {
-    padding: 15px;
+    padding: 24px;
   }
 }
 
@@ -373,11 +430,16 @@ a:hover {
 @media (max-width: 480px) {
   /* Even smaller ASCII art for very small screens */
   .ascii-art pre {
-    font-size: 6px;
+    font-size: 8px;
   }
   
   /* Compact content text for mobile phones */
-  .content-text {
-    font-size: 11px;
+  .line {
+    font-size: 13px;
+  }
+  
+  /* Minimal padding for mobile */
+  .terminal-body {
+    padding: 20px;
   }
 }

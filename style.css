@@ -72,22 +72,6 @@
   outline-offset: 2px;
 }
 
-/* Skip link for screen readers */
-.skip-link {
-  position: absolute;
-  top: -40px;
-  left: 6px;
-  background: var(--accent-primary);
-  color: var(--bc-cream);
-  padding: 8px;
-  text-decoration: none;
-  border-radius: var(--radius-sm);
-  z-index: 1000;
-}
-
-.skip-link:focus {
-  top: 6px;
-}
 
 /* ==========================================================================
    GLOBAL STYLES & RESET

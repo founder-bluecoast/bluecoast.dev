@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  font-family: theme('fontFamily.sans');
+}
+
+/* Blue Coast brand helpers */
+a {
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  text-decoration: underline;
+}

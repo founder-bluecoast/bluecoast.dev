@@ -1,0 +1,21 @@
+---
+import Base from "../layouts/Base.astro";
+import TerminalHero from "../components/TerminalHero.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import { getCollection } from "astro:content";
+const projects = (await getCollection("projects"))
+  .sort((a,b) => b.data.order - a.data.order)
+  .slice(0,6);
+---
+<Base title="Blue Coast Software · Guild Hall" description="Lean, lasting, well-crafted software.">
+  <div class="py-12 md:py-16">
+    <TerminalHero />
+  </div>
+
+  <section class="py-4 md:py-8">
+    <h2 class="font-mono text-xl md:text-2xl mb-4 text-bc-muted">Featured Projects</h2>
+    <div class="grid gap-4 md:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+      {projects.map(p => <ProjectCard entry={p} />)}
+    </div>
+  </section>
+</Base>

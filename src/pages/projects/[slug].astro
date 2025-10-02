@@ -1,5 +1,6 @@
 ---
 import Base from "../../layouts/Base.astro";
+import Prose from "../../components/Prose.astro";
 import type { CollectionEntry } from "astro:content";
 
 export async function getStaticPaths() {
@@ -15,9 +16,11 @@ const { entry } = Astro.props as { entry: CollectionEntry<"projects"> };
 const { Content } = await entry.render();
 ---
 <Base title={`${entry.data.title} · Blue Coast`}>
-  <article class="max-w-3xl mx-auto space-y-4 leading-relaxed">
-    <h1 class="text-3xl font-semibold">{entry.data.title}</h1>
-    {entry.data.summary && <p class="opacity-90">{entry.data.summary}</p>}
-    <Content />
-  </article>
+  <Prose>
+    <article class="max-w-3xl mx-auto space-y-4 leading-relaxed">
+      <h1 class="text-3xl font-semibold">{entry.data.title}</h1>
+      {entry.data.summary && <p class="opacity-90">{entry.data.summary}</p>}
+      <Content />
+    </article>
+  </Prose>
 </Base>

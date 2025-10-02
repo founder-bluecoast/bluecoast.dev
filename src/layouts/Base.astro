@@ -2,7 +2,7 @@
 import "../styles/global.css";
 const { title = "Blue Coast Software", description = "Independent guild of tools & games.", } = Astro.props;
 ---
-<html lang="en" class="bg-bc-ink text-bc-foam">
+<html lang="en" data-theme="bluecoast" class="bg-bc-ink text-bc-foam">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
@@ -10,7 +10,7 @@ const { title = "Blue Coast Software", description = "Independent guild of tools
     <meta name="description" content={description} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   </head>
-  <body class="min-h-screen font-sans bg-bc-ink text-bc-foam">
+  <body data-theme="bluecoast" class="min-h-screen font-sans bg-bc-ink text-bc-foam">
     <header class="max-w-5xl mx-auto px-4 py-6 flex items-center justify-between border-b border-bc-border">
       <a href="/" class="font-mono text-sm tracking-widest uppercase">Blue Coast</a>
       <nav class="font-mono text-sm space-x-4">

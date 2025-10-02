@@ -1,60 +1,69 @@
-# Astro Starter Kit: Minimal
+# Blue Coast Software Website
 
-```sh
-npm create astro@latest -- --template minimal
-```
+This is the official website for **Blue Coast Software**, built with [Astro](https://astro.build), [TailwindCSS](https://tailwindcss.com), and [MDX](https://mdxjs.com).  
+The site serves as the public guild hall for our projects, journals, and long‑term craft in software.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🌊 Features
+- **Projects** — collection of tools, games, and experiments with individual detail pages.
+- **Journal** — essays, release notes, and development logs.
+- **About** — philosophy, influences, and contact.
+- **Responsive design** — terminal‑inspired, mobile‑friendly layout with Blue Coast brand colors.
+- **Content collections** — projects and posts authored in Markdown/MDX with simple frontmatter.
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
+## 📂 Project Structure
 
 ```text
 /
-├── public/
+├── public/              # Static assets (images, favicon, etc.)
 ├── src/
-│   └── pages/
-│       └── index.astro
+│   ├── components/      # Reusable Astro components
+│   ├── content/         # MDX collections (projects, journal)
+│   ├── layouts/         # Base layouts
+│   └── pages/           # Route pages (index, projects, about, etc.)
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 🛠️ Development
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+All commands are run from the root of the project:
 
-Any static assets, like images, can be placed in the `public/` directory.
+| Command            | Action                                         |
+| ------------------ | ---------------------------------------------- |
+| `npm install`      | Install dependencies                           |
+| `npm run dev`      | Start local dev server at `http://localhost:4321` |
+| `npm run build`    | Build site to `./dist/`                        |
+| `npm run preview`  | Preview the built site locally                 |
 
-## 🧞 Commands
+## 🌐 Deployment
 
-All commands are run from the root of the project, from a terminal:
+This site is static and can be deployed anywhere that serves HTML/CSS/JS (Vercel, Netlify, Cloudflare, GitHub Pages, etc.).  
+Yes — anyone can run it locally in their browser using `npm run dev`, or view it once deployed.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## 📝 Content Workflow
 
-## 👀 Want to learn more?
+To add a new project, create a file at:
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+```
+src/content/projects/my-project.mdx
+```
 
-## Blue Coast — Astro Starter
-- Dev: `npm run dev`
-- Build: `npm run build` → `dist/`
-- Add a project: create `src/content/projects/my-project.mdx` with frontmatter:
-  ```md
-  ---
-  title: "My Project"
-  summary: "One-liner about the work."
-  status: "alpha" # or beta/stable
-  date: "2025-01-01"
-  tags: ["tag"]
-  order: 0
-  hero: "/images/my-project/hero.png"
-  repo: "https://github.com/bluecoast/my-project"
-  ---
-  ```
+With frontmatter like:
+
+```md
+---
+title: "My Project"
+summary: "One-liner about the work."
+status: "alpha" # or beta/stable
+date: "2025-01-01"
+tags: ["tag"]
+order: 0
+hero: "/images/my-project/hero.png"
+repo: "https://github.com/bluecoast/my-project"
+---
+```
+
+Then restart the dev server. It will appear automatically on `/projects` with its own detail page.
+
+## © Blue Coast Software
+
+Crafted with care, leaning into retro‑futurist aesthetics and modern engineering discipline.

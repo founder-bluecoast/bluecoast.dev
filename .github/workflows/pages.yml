@@ -18,8 +18,25 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: 'npm'
       - run: npm ci
-      - run: npm run build
+
+      # --- Run unit/content tests (Vitest)
+      - name: Run unit tests (Vitest)
+        run: npm run test
+
+      # --- Install Playwright browsers
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+
+      # --- Run integration & a11y tests (Playwright)
+      - name: Run Playwright tests
+        run: npm run test:playwright
+
+      # --- Build after tests pass
+      - name: Build
+        run: npm run build
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist

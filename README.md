@@ -10,18 +10,7 @@ An independent guild of tools and games, built in the spirit of craft rather tha
 
 ## Deployment
 
-This is a static site. Deploy to:
-- GitHub Pages
-- Netlify
-- Vercel
-- Any static hosting service
-
-## Customization
-
-Update these placeholders in `index.html`:
-- `YOUR_GITHUB_USERNAME` (appears 2 times)
-- `hello@bluecoastsoftware.com` (your email)
-- `YOUR_TWITTER` (your Twitter/X handle)
+Hosted on GitHub Pages at [bluecoast.dev](https://bluecoast.dev)
 
 ## Brand Colors
 

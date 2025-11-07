@@ -1,0 +1,116 @@
+/* ============================================
+   LAYOUT STYLES
+   Grid overlay, containers, and base layout
+   ============================================ */
+
+/* ===== BODY & BASE ===== */
+
+body {
+    background-color: var(--midnight);
+    color: var(--soft-white);
+    font-family: var(--font-sans);
+    font-size: var(--font-base);
+    line-height: var(--line-height-normal);
+    position: relative;
+}
+
+/* ===== GRID OVERLAY ===== */
+
+.grid-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        repeating-linear-gradient(0deg,
+            var(--grid-glow) 0px,
+            var(--grid-glow) 1px,
+            transparent 1px,
+            transparent 40px),
+        repeating-linear-gradient(90deg,
+            var(--grid-glow) 0px,
+            var(--grid-glow) 1px,
+            transparent 1px,
+            transparent 40px);
+    pointer-events: none;
+    z-index: var(--z-grid);
+    opacity: 0.5;
+}
+
+/* ===== CONTAINER ===== */
+
+.container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+    position: relative;
+    z-index: var(--z-base);
+}
+
+/* ===== SECTION SPACING ===== */
+
+section {
+    padding: var(--space-4xl) 0;
+    position: relative;
+}
+
+/* Alternate section backgrounds */
+.services {
+    background-color: var(--dark-slate);
+    border-top: var(--border-width-medium) solid var(--charcoal);
+    border-bottom: var(--border-width-medium) solid var(--charcoal);
+}
+
+.about {
+    background-color: var(--dark-slate);
+}
+
+/* ===== SECTION HEADERS ===== */
+
+.section-header {
+    margin-bottom: var(--space-2xl);
+}
+
+.section-label {
+    font-family: var(--font-mono);
+    font-size: var(--font-sm);
+    color: var(--muted-gray);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-wider);
+    margin-bottom: var(--space-sm);
+}
+
+.section-title {
+    font-family: var(--font-mono);
+    font-size: var(--font-xxl);
+    font-weight: var(--font-bold);
+    color: var(--tide-blue);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-tight);
+    line-height: var(--line-height-tight);
+}
+
+/* ===== GRID LAYOUTS ===== */
+
+/* Services Grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--grid-gap);
+}
+
+/* Projects Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--grid-gap-large);
+}
+
+/* Footer Grid */
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: var(--space-2xl);
+    margin-bottom: var(--space-2xl);
+}

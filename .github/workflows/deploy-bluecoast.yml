@@ -1,0 +1,54 @@
+name: Deploy Bluecoast.dev to GitHub Pages  # Repo-specific name for easy spotting
+
+on:
+  push:
+    branches: [ "main" ]  # Empirical trigger: Fires on your updates here.
+  workflow_dispatch: {}  # Unlocks manual "Run workflow" button.
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false  # Prevents overlapping deploys—logical safeguard.
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4  # Grabs your repo (including updates).
+
+      # === REPO-SPECIFIC BUILD STEPS: Customize based on bluecoast.dev ===
+      # If plain HTML/CSS/JS: Skip below, use path: '.'.
+      # If npm-based (e.g., Vite/React for a dev site): Uncomment next block.
+      # - name: Setup Node.js
+      #   uses: actions/setup-node@v4
+      #   with:
+      #     node-version: '20'  # Or your package.json engines.
+      # - name: Install dependencies
+      #   run: npm ci  # Faster than npm install; CI mode.
+      # - name: Build site
+      #   run: npm run build  # Assumes 'build' script outputs to 'dist'.
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5  # Preps GitHub's Pages env.
+
+      - name: Upload site artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .  # ← KEY: '.' for root HTML; 'dist' for npm builds; 'public' for Hugo/etc.
+                   # Check your repo root: If index.html is there, use '.'.
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}  # Auto-updates your live URL.
+    runs-on: ubuntu-latest
+    needs: build  # Logical: Deploy only after build succeeds.
+    steps:
+      - name: Deploy to Pages
+        id: deployment
+        uses: actions/deploy-pages@v4  # Official magic: Pushes to Pages.

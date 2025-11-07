@@ -3,125 +3,340 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blue Coast Software | An Independent Guild of Tools and Games</title>
-    <meta name="description" content="Independent guild of tools and games. Built in the spirit of craft rather than commerce.">
+    <meta name="description" content="Blue Coast Software - Ventura-based software workshop specializing in terminal UIs, web applications, and custom business tools. Coastal discipline meets terminal aesthetics.">
+    <meta name="keywords" content="terminal UI, TUI, web development, custom software, Ventura, California">
 
-    <!-- Security Headers -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'none';">
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-Frame-Options" content="DENY">
-    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Blue Coast Software | Coastal Discipline Meets Terminal Aesthetics">
+    <meta property="og:description" content="Terminal-sharp software for the modern age. Building TUIs, web apps, and business tools in Ventura, California.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.bluecoast.dev">
 
-    <link rel="stylesheet" href="css/style.css">
+    <title>Blue Coast Software | Terminal UIs, Web Apps & Custom Tools</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
-    <!-- HEADER -->
-    <header>
-        <div class="container">
-            <nav>
-                <a href="#" class="logo">Blue Coast</a>
-                <button class="menu-toggle" id="menuToggle">Menu</button>
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#work">Work</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+
+    <!-- Grid Overlay -->
+    <div class="grid-overlay" aria-hidden="true"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="container nav-container">
+            <a href="#" class="logo" aria-label="Blue Coast Software Home">
+                <span class="logo-symbol">$</span> BLUE COAST
+            </a>
+            <ul class="nav-links">
+                <li><a href="#work">WORK</a></li>
+                <li><a href="#services">SERVICES</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-    </header>
+    </nav>
 
-    <!-- HERO -->
-    <section class="hero">
+    <!-- Hero Section -->
+    <section class="hero" id="home">
         <div class="container">
-            <h1>Blue Coast Software</h1>
-            <p class="hero-tagline">An independent guild of tools and games</p>
-            <div class="cta-group">
-                <a href="#work" class="btn btn-primary">View Work</a>
-                <a href="https://github.com/founder-bluecoast" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about">
-        <div class="container">
-            <h2 class="section-title">About the Guild</h2>
-            <p class="about-text">
-                Blue Coast Software is an independent guild of tools and games, built in the spirit of
-                craft rather than commerce. We approach software as a workshop discipline—lean, deliberate,
-                and designed to endure—favoring clarity over flash and substance over scale.
-            </p>
-            <p class="about-text">
-                Our projects blend retro-futurist aesthetics with modern engineering, drawing on the
-                heritage of early computing, the imagination of high fantasy, and the rigor of classical design.
-            </p>
-            <div class="divider"></div>
-            <p class="about-text">
-                We value clear craft and long horizons: tools meant to serve families and communities for
-                decades, games meant to delight while carrying depth, and code written not just to function,
-                but to last.
-            </p>
-            <p class="about-text">
-                Blue Coast is where story, engineering, and design converge—our guild hall on the digital shore.
-            </p>
-        </div>
-    </section>
-
-    <!-- WORK -->
-    <section id="work">
-        <div class="container">
-            <h2 class="section-title">Current Work</h2>
-
-            <div class="projects-list">
-                <div class="project">
-                    <div class="project-status">In Development</div>
-                    <h3>1662 Book of Common Prayer</h3>
-                    <p>
-                        A terminal application for daily prayer. Built with Python and designed for
-                        contemplation, bringing classical liturgy to the command line.
-                    </p>
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="terminal-prompt">~$ blue-coast --mission</div>
+                    <h1 class="hero-title">
+                        <span class="title-line">COASTAL</span>
+                        <span class="title-line">DISCIPLINE</span>
+                        <span class="title-line">DIGITAL</span>
+                        <span class="title-line">CRAFT</span>
+                    </h1>
+                    <p class="hero-tagline">Terminal-sharp software for the modern age.</p>
+                    <div class="hero-cta">
+                        <a href="#work" class="btn btn-primary">View Projects</a>
+                        <a href="#contact" class="btn btn-secondary">Start Project</a>
+                    </div>
                 </div>
-
-                <div class="project">
-                    <div class="project-status">Planned</div>
-                    <h3>HearthLedger</h3>
-                    <p>
-                        A household ledger with retro discipline. Track family finances with clarity
-                        and simplicity, designed to serve for decades.
-                    </p>
-                </div>
-
-                <div class="project">
-                    <div class="project-status">Planned</div>
-                    <h3>Terminal Adventures</h3>
-                    <p>
-                        Roguelike exploration in ASCII. Games that delight while carrying depth,
-                        built with the imagination of high fantasy and terminal aesthetics.
-                    </p>
+                <div class="hero-terminal">
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <span class="dot dot-coral"></span>
+                            <span class="dot dot-yellow"></span>
+                            <span class="dot dot-sage"></span>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="terminal-line">
+                                <span class="prompt">~$</span> blue-coast --about
+                            </div>
+                            <div class="terminal-output">
+                                <div class="output-line">Ventura-based software workshop</div>
+                                <div class="output-line">Building: TUIs, web apps, business tools</div>
+                                <div class="output-line">Philosophy: Clean code, clear purpose</div>
+                                <div class="output-line terminal-comment"># Terminal aesthetics meet coastal calm</div>
+                            </div>
+                            <div class="terminal-line">
+                                <span class="prompt">~$</span><span class="cursor">_</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CONTACT -->
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">// What We Build</div>
+                <h2 class="section-title">SERVICES & EXPERTISE</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">▣</div>
+                    <h3 class="service-title">TERMINAL UIs</h3>
+                    <p class="service-description">
+                        Command-line interfaces and TUI applications built with efficiency and elegance.
+                        For power users who demand precision.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">◫</div>
+                    <h3 class="service-title">WEB APPLICATIONS</h3>
+                    <p class="service-description">
+                        Modern web apps with retro discipline. Clean design, solid architecture,
+                        no unnecessary complexity.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">▦</div>
+                    <h3 class="service-title">BUSINESS TOOLS</h3>
+                    <p class="service-description">
+                        Custom software for your business operations. From ledgers to dashboards,
+                        built to your specifications.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">◧</div>
+                    <h3 class="service-title">API DEVELOPMENT</h3>
+                    <p class="service-description">
+                        Robust backend systems and API architecture. Scalable, secure,
+                        and well-documented.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">▨</div>
+                    <h3 class="service-title">SYSTEM DESIGN</h3>
+                    <p class="service-description">
+                        Technical consultation and architecture planning. We help map the right
+                        solution for your needs.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">◨</div>
+                    <h3 class="service-title">CODE REVIEW</h3>
+                    <p class="service-description">
+                        Expert analysis of your existing codebase. Identify issues, optimize
+                        performance, improve security.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="work">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">// Portfolio</div>
+                <h2 class="section-title">RECENT WORK</h2>
+            </div>
+            <div class="projects-grid">
+                <article class="project-card">
+                    <div class="project-preview">
+                        <div class="project-symbol">◢</div>
+                        <div class="project-label">1662</div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">1662 PRAYER BOOK TUI</h3>
+                        <p class="project-description">
+                            Terminal interface for the 1662 Book of Common Prayer. Liturgical text
+                            meets command-line elegance.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">TUI</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Open Source</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-preview">
+                        <div class="project-symbol">◣</div>
+                        <div class="project-label">HL</div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">HEARTHLEDGER</h3>
+                        <p class="project-description">
+                            Modern household ledger with retro sensibility. Financial tracking for
+                            the terminal generation.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Web App</span>
+                            <span class="tag">SaaS</span>
+                            <span class="tag">Finance</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-preview">
+                        <div class="project-symbol">◥</div>
+                        <div class="project-label">PT</div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">PHANTOM TIDES</h3>
+                        <p class="project-description">
+                            Retro dungeon crawler with modern gameplay. Coastal mythology meets
+                            roguelike mechanics.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Game</span>
+                            <span class="tag">Retro</span>
+                            <span class="tag">Python</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-preview">
+                        <div class="project-symbol">◤</div>
+                        <div class="project-label">CW</div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">CLIENT WORK</h3>
+                        <p class="project-description">
+                            Commissioned business applications. POS systems, inventory management,
+                            custom dashboards.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Custom</span>
+                            <span class="tag">Business</span>
+                            <span class="tag">Contract</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <h2 class="section-title">ABOUT BLUE COAST</h2>
+                <div class="about-text">
+                    <p>
+                        Blue Coast Software is a Ventura-based software workshop specializing in
+                        terminal UIs, web applications, and custom business tools. We bring coastal
+                        discipline to digital craft.
+                    </p>
+                    <p>
+                        Our philosophy is simple: terminal-sharp software with retro discipline and
+                        coastal calm. We build tools that are efficient, elegant, and built to last.
+                    </p>
+                    <p>
+                        Whether you need a command-line interface, a web application, or a custom
+                        business solution, we approach every project with the same attention to
+                        detail and commitment to quality.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
-            <h2 class="section-title">Get in Touch</h2>
-            <p class="about-text">
-                Interested in commissioning work or collaborating?
-            </p>
-            <!-- <div class="contact-links">
-                <a href="mailto:founder@bluecoast.dev">Email</a>
-                <a href="https://github.com/founder-bluecoast" target="_blank" rel="noopener noreferrer">GitHub</a>
-            </div> -->
+            <div class="contact-content">
+                <h2 class="section-title">START A PROJECT</h2>
+                <p class="contact-intro">
+                    Ready to build something great? Let's discuss your project and find the right solution.
+                </p>
+                <div class="contact-methods">
+                    <a href="mailto:hello@bluecoast.dev" class="contact-link">
+                        <span class="contact-icon">@</span>
+                        <span>hello@bluecoast.dev</span>
+                    </a>
+                    <a href="https://github.com/bluecoastsoftware" class="contact-link" target="_blank" rel="noopener noreferrer">
+                        <span class="contact-icon">&gt;</span>
+                        <span>GitHub</span>
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer>
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Blue Coast Software</p>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <span class="logo-symbol">$</span> BLUE COAST
+                    </div>
+                    <p class="footer-tagline">
+                        Coastal discipline meets terminal aesthetics. Software crafted in Ventura, California.
+                    </p>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-heading">PROJECTS</h4>
+                    <ul class="footer-links">
+                        <li><a href="#work">Prayer Book TUI</a></li>
+                        <li><a href="#work">HearthLedger</a></li>
+                        <li><a href="#work">Phantom Tides</a></li>
+                        <li><a href="#work">View All</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-heading">SERVICES</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services">TUI Development</a></li>
+                        <li><a href="#services">Web Applications</a></li>
+                        <li><a href="#services">Business Tools</a></li>
+                        <li><a href="#services">Consultation</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-heading">CONNECT</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://github.com/bluecoastsoftware" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                        <li><a href="mailto:hello@bluecoast.dev">Email</a></li>
+                        <li><a href="https://linkedin.com/company/bluecoast-software" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Blue Coast Software. Ventura, California.</p>
+            </div>
         </div>
     </footer>
 

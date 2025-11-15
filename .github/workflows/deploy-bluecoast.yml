@@ -37,7 +37,7 @@ jobs:
         uses: actions/configure-pages@v5  # Preps GitHub's Pages env.
 
       - name: Upload site artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: .  # ← KEY: '.' for root HTML; 'dist' for npm builds; 'public' for Hugo/etc.
                    # Check your repo root: If index.html is there, use '.'.

@@ -2,7 +2,7 @@
 
 > Coastal discipline meets terminal aesthetics
 
-A production-ready website for Blue Coast Software, a Ventura-based software workshop specializing in terminal UIs, web applications, and custom business tools.
+A production-ready website for Blue Coast Software, a California-based software workshop specializing in terminal UIs, web applications, and custom business tools.
 
 ## Design System: "Midnight Tide"
 
@@ -246,7 +246,7 @@ Optional features you might want to add:
 ---
 
 **Questions?** Email: hello@bluecoast.dev
-**Location**: Ventura, California
+**Location**: California
 An independent guild of tools and games, built in the spirit of craft rather than commerce.
 
 ## Local Development

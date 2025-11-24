@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4  # Grabs your repo (including updates).
+        uses: actions/checkout@v6  # Grabs your repo (including updates).
 
       # === REPO-SPECIFIC BUILD STEPS: Customize based on bluecoast.dev ===
       # If plain HTML/CSS/JS: Skip below, use path: '.'.

@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     console.log('%c$ Blue Coast Software', 'color: #5a8fa8; font-family: monospace; font-size: 20px; font-weight: bold;');
     console.log('%cCoastal discipline meets terminal aesthetics.', 'color: #c97d6b; font-family: monospace; font-size: 14px;');
-    console.log('%c~$ Interested in our work? Get in touch at hello@bluecoast.dev', 'color: #7fa883; font-family: monospace; font-size: 12px;');
+    console.log('%c~$ Interested in our work? Get in touch at founder@bluecoast.dev', 'color: #7fa883; font-family: monospace; font-size: 12px;');
     console.log('%c', 'font-size: 0; padding: 20px 100px; background: url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 20\'%3E%3Ctext x=\'0\' y=\'15\' fill=\'%235a8fa8\' font-family=\'monospace\' font-size=\'12\'%3E────────────────────%3C/text%3E%3C/svg%3E");');
 
 });
